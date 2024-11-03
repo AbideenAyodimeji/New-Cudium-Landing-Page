@@ -1,0 +1,117 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  text-decoration: none;
+}
+
+/* **************Utilities*********** */
+.whiteColor {
+  color: #fff;
+}
+.whiteBcg {
+  background-color: #fff;
+}
+.blackColor {
+  color: #000;
+}
+.blackBcg {
+  background-color: #000;
+}
+
+.flex,
+.flexRow,
+.flexColumn,
+.spaceAround,
+.alignCenter,
+.justifyCenter,
+.spaceBetween,
+.alignFlexEnd,
+.alignFlexStart {
+  display: flex;
+}
+.flexColumn {
+  flex-direction: column;
+}
+.spaceBetween {
+  justify-content: space-between;
+}
+.spaceAround {
+  justify-content: space-around;
+}
+.alignCenter {
+  align-items: center;
+}
+.alignFlexEnd {
+  align-items: flex-end;
+}
+.alignFlexStart {
+  align-items: flex-start;
+}
+.justifyCenter {
+  justify-content: center;
+}
+
+.smallGap {
+  gap: 0.3rem;
+}
+.smallerGap {
+  gap: 0.2rem;
+}
+
+.halfRemGap {
+  gap: 0.5rem;
+}
+.oneRemGap {
+  gap: 1rem;
+}
+.twoRemGap {
+  gap: 2rem;
+}
+
+.halfVhGap {
+  gap: 0.5vh;
+}
+.oneVhGap {
+  gap: 1vh;
+}
+.oneHalfVhGap {
+  gap: 1.5vh;
+}
+.twoVhGap {
+  gap: 2vh;
+}
+.twoHalfVhGap {
+  gap: 2.5vh;
+}
+.threeVhGap {
+  gap: 3vh;
+}
+
+.halfVwGap {
+  gap: 0.5vw;
+}
+.oneVwGap {
+  gap: 1vw;
+}
+.oneHalfVwGap {
+  gap: 1.5vw;
+}
+.twoVwGap {
+  gap: 2vw;
+}
+.twoHalfVwGap {
+  gap: 2.5vw;
+}
+.threeVwGap {
+  gap: 3vw;
+}
+
+.textAlign {
+  text-align: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+/* ******************Utilities*************** */

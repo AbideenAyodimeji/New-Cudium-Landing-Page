@@ -1,0 +1,1950 @@
+/* **************Utilities*********** */
+.whiteColor {
+  color: #fff;
+}
+.whiteBcg {
+  background-color: #fff;
+}
+.blackColor {
+  color: #000;
+}
+.blackBcg {
+  background-color: #000;
+}
+
+.flex,
+.flexRow,
+.flexColumn,
+.spaceAround,
+.alignCenter,
+.justifyCenter,
+.spaceBetween,
+.alignFlexEnd,
+.alignFlexStart {
+  display: flex;
+}
+.flexColumn {
+  flex-direction: column;
+}
+.spaceBetween {
+  justify-content: space-between;
+}
+.spaceAround {
+  justify-content: space-around;
+}
+.alignCenter {
+  align-items: center;
+}
+.alignFlexEnd {
+  align-items: flex-end;
+}
+.alignFlexStart {
+  align-items: flex-start;
+}
+.justifyCenter {
+  justify-content: center;
+}
+
+.smallGap {
+  gap: 0.3rem;
+}
+.smallerGap {
+  gap: 0.2rem;
+}
+
+.halfRemGap {
+  gap: 0.5rem;
+}
+.oneRemGap {
+  gap: 1rem;
+}
+.twoRemGap {
+  gap: 2rem;
+}
+
+.halfVhGap {
+  gap: 0.5vh;
+}
+.oneVhGap {
+  gap: 1vh;
+}
+.oneHalfVhGap {
+  gap: 1.5vh;
+}
+.twoVhGap {
+  gap: 2vh;
+}
+.twoHalfVhGap {
+  gap: 2.5vh;
+}
+.threeVhGap {
+  gap: 3vh;
+}
+
+.halfVwGap {
+  gap: 0.5vw;
+}
+.oneVwGap {
+  gap: 1vw;
+}
+.oneHalfVwGap {
+  gap: 1.5vw;
+}
+.twoVwGap {
+  gap: 2vw;
+}
+.twoHalfVwGap {
+  gap: 2.5vw;
+}
+.threeVwGap {
+  gap: 3vw;
+}
+
+.textAlign {
+  text-align: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+/* ******************Utilities*************** */
+
+/* ++++++++++++++++++++++++++++++++ header style starts ++++++++++++++++++++++ */
+.header {
+  width: 100vw;
+  height: 70.5vh;
+  background-image: url('/Images/header-background.png');
+  overflow: hidden;
+  padding: 3.5vh 7vw 0;
+  background-size: cover;
+}
+
+.nav {
+  position: relative;
+}
+
+.leftNavigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.cudiumLogoText {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.desktopServiceMenu,
+.navButton {
+  display: none;
+}
+
+.desktopServiceMenuServiceText {
+  color: #f6f8fc;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.desktopServiceMenuBlogText,
+.desktopServiceMenuHelpText {
+  color: #cbd4e1;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.navButton {
+  background-color: transparent;
+  align-items: center;
+  justify-self: center;
+}
+
+.navButtonText {
+  font-size: 0.7rem;
+  font-weight: 300;
+  text-wrap: nowrap;
+  background-color: transparent;
+  border: 1px solid #f6f8fc;
+  border-radius: 0.5vw;
+}
+
+.iconWrapper {
+  perspective: 1000px;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Animation states */
+.menuOpen {
+  opacity: 1;
+  transform: rotateY(0deg); /* Default position */
+}
+
+.menuClosed {
+  opacity: 1;
+  transform: rotateY(180deg); /* Flip the icon */
+}
+
+.navBarIcon {
+  height: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navXicon {
+  color: #fff;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes mobileMenuAnimationEnter {
+  from {
+    left: -100vw;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes mobileMenuAnimationExit {
+  from {
+    left: 0vw;
+    opacity: 1;
+  }
+  to {
+    left: -100vw;
+    opacity: 1;
+  }
+}
+
+.mobileMenu {
+  margin: 3vh -7vw 0;
+  padding: 1vh 7vw;
+  background-image: url('/Images/header-background.png');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 5vw;
+  z-index: 100;
+  background-attachment: fixed;
+  display: none;
+}
+
+.mobileMenuOpen {
+  animation: mobileMenuAnimationEnter 1s ease-in-out;
+  background-attachment: fixed;
+}
+
+.mobileMenuClosing {
+  animation: mobileMenuAnimationExit 1s ease-in-out;
+}
+
+.mobileMenuListItems {
+  list-style: none;
+  gap: 3vh;
+}
+
+.mobileMenuButton {
+  background-color: #3772fa;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 1vh 2vw;
+}
+
+.mobileMenuButtonText {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.mobileMenuServiceText {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.mobileMenuBlogText {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.mobileMenuHelpText {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.headerCenterContainer {
+  margin-top: 5vh;
+}
+
+.headerBoldText {
+  color: #f6f8fc;
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+
+.headerSubText {
+  color: #e2e8f0;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 0.7rem;
+  padding-right: 15vw;
+}
+
+.headerButtons {
+  margin: 4vh 0 0 0;
+  gap: 4vw;
+}
+
+.playstoreButton,
+.appstoreButton {
+  gap: 2vw;
+  border-radius: 0.3rem;
+  padding: 1.3vh 2.5vw;
+  border: none;
+}
+
+.playstoreIcon {
+  width: 3.5vw;
+  height: 3.5vh;
+  color: #f6f8fc;
+}
+
+.appstoreIcon {
+  color: #f6f8fc;
+  width: 3vw;
+  height: 3vh;
+}
+
+.xSolid {
+  display: none;
+}
+
+.headerBtnSubText {
+  font-size: 0.7rem;
+}
+
+.headerBtnBoldText {
+  font-size: 1rem;
+}
+
+.headerBottomContainer {
+  margin: 0 0 0 0;
+  position: relative;
+}
+
+.headerBottomImg {
+  position: relative;
+  width: 70vw;
+  left: 15vw;
+  z-index: 1;
+}
+
+.headerBottomLeftContainer {
+  height: auto;
+  width: 35vw;
+  border-radius: 1rem;
+  position: relative;
+  top: 22vh;
+  z-index: 10;
+  padding: 1vh 3vw;
+  background: linear-gradient(
+    253.32deg,
+    rgba(255, 255, 255, 0.1) 15.43%,
+    rgba(192, 217, 255, 0.4) 35.38%,
+    rgba(192, 217, 255, 0.6) 53.28%,
+    rgba(255, 255, 255, 0.3) 74.37%
+  );
+  border-image-source: linear-gradient(
+    125.78deg,
+    rgba(55, 114, 255, 0.1) 26.75%,
+    rgba(244, 245, 246, 0.1) 26.76%,
+    rgba(192, 217, 255, 0.5) 88.43%,
+    rgba(192, 217, 255, 0.3) 88.43%
+  );
+  box-shadow: 0px 4px 24px -1px #0d0d0d40;
+}
+
+.headerBottomLeftContainerText {
+  color: #27ae60;
+  font-size: 0.6rem;
+  font-weight: 700;
+  border-radius: 2rem;
+  background-color: #e2e8f0;
+  padding: 0.3vh 2vw;
+  text-wrap: nowrap;
+}
+
+.headerBottomLeftContainerNum {
+  color: #f6f8fc;
+  font-weight: 700;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.headerBottomRightContainer {
+  height: auto;
+  width: 38vw;
+  padding: 1.2vh 1.7vw;
+  position: relative;
+  left: 48vw;
+  bottom: 30vh;
+  z-index: 10;
+  /* border: 3px solid; */
+  background: linear-gradient(
+    253.32deg,
+    rgba(255, 255, 255, 0.1) 15.43%,
+    rgba(192, 217, 255, 0.4) 35.38%,
+    rgba(192, 217, 255, 0.6) 53.28%,
+    rgba(255, 255, 255, 0.3) 74.37%
+  );
+  border-radius: 1rem;
+  border-image-source: linear-gradient(
+    125.78deg,
+    rgba(55, 114, 255, 0.1) 26.75%,
+    rgba(244, 245, 246, 0.1) 26.76%,
+    rgba(192, 217, 255, 0.5) 88.43%,
+    rgba(192, 217, 255, 0.3) 88.43%
+  );
+}
+
+.headerbottomImg2 {
+  position: absolute;
+  right: 0;
+  top: -2vh;
+}
+
+.headerBottomRightContainerFlexRow {
+  text-wrap: nowrap;
+  gap: 1vw;
+}
+
+.headerBottomRightBoldText {
+  color: #fafafb;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.headerBottomRightSubText {
+  margin-top: 1vh;
+  font-weight: 600;
+  color: #f6f8fc;
+  font-size: 0.7rem;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++ header style ends++++++++++++++++++++++++++++ */
+
+/* ++++++++++++++++++++++++++++++++++++ section-one style starts ++++++++++++++++++++++++ */
+
+.desktopCard {
+  display: none;
+}
+
+.sectionOne {
+  position: relative;
+  padding: 0vh auto 0;
+  background-color: #fdfdfe;
+  z-index: 1;
+}
+
+.sectionOneBoxContainer {
+  position: relative;
+}
+
+.sectionOneBox {
+  margin-top: 12vh;
+  padding: 2.5vh 4vw;
+  background-color: #f6f8fc;
+  height: auto;
+  width: 70vw;
+  border-radius: 1rem;
+}
+
+.kudaImg {
+  position: absolute;
+  left: -7vw;
+  top: 8vh;
+}
+
+.gtbImg {
+  position: absolute;
+  top: 8vh;
+  left: 50vw;
+}
+
+.aImg {
+  position: absolute;
+  top: 30vh;
+  left: 65vw;
+}
+
+.balanceBox {
+  background-color: #3772fa;
+  padding: 1vh;
+  border-radius: 0.5rem;
+}
+
+.balanceFlex {
+  margin-top: 0.8vh;
+  align-items: center;
+}
+
+.balanceText {
+  color: #f1f4f9;
+  font-size: 1rem;
+}
+
+.balanceFig {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.amountBox {
+  margin: 2vh 0 0 0;
+}
+
+.amountContainer,
+.ngnBox,
+.selectBankBox,
+.enterAccount {
+  background-color: #e2e8f0;
+  padding: 1.7vh;
+  border-radius: 0.5rem;
+  margin: 1vh 0 0.5vh 0;
+}
+
+.amountContainer {
+  flex-grow: 3;
+}
+.amountContainerFig {
+  color: #64748b;
+  font-size: 0.8rem;
+}
+
+.selectBankBoxText,
+.enterAccountText {
+  color: #94a3b8;
+}
+.ngnBox {
+  gap: 3vw;
+}
+
+.ngnText {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.7rem;
+}
+
+.nigFlag {
+  margin-right: 0.8vw;
+  border-radius: 0.4rem;
+}
+
+.ngnIcon {
+  color: #94a3b8;
+  height: 1.2vh;
+}
+.boxes {
+  gap: 3vw;
+}
+
+.amountText,
+.bankAcountText,
+.accountNumberText {
+  color: #64748b;
+  font-size: 0.7rem;
+  font-weight: 600;
+  margin: 2.5vh 0 0 0;
+}
+
+.sectionOneDesc {
+  margin: 5vh 15vw;
+  gap: 1.5vh;
+}
+
+.circleDesc {
+  margin: 10vh 15vw 0;
+  gap: 2vh;
+}
+
+.circleContainer {
+  margin: 3vh 0 0 0;
+}
+
+.sectionOneCircleImg {
+  width: 80vw;
+  height: 30vh;
+}
+
+.container3Desc {
+  margin: 5vh 15vw 7vh;
+  gap: 1.5vh;
+}
+
+.sectionOneDescBoldText,
+.container3DescBoldText,
+.circleDescBoldText {
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.sectionOneDescLightText,
+.container3DescLightText,
+.circleDescLightText {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.container3 {
+  position: relative;
+  width: 70vw;
+  margin: 10vh 15vw 0;
+  padding: 1vh 5.5vw 3vh 5.5vw;
+  border-radius: 0.8rem;
+  background-color: #f6f8fc;
+  gap: 2vh;
+}
+
+.image2 {
+  position: absolute;
+  top: -3vh;
+  left: -5vw;
+}
+
+.checkmark {
+  position: absolute;
+  bottom: -2vh;
+  right: -4vw;
+}
+
+.container3Elem1 {
+  margin-top: 2vh;
+}
+
+.container3Elem1,
+.container3Elem2,
+.container3Elem3 {
+  gap: 10vw;
+  border-radius: 0.5rem;
+  padding: 1.3vh 0 2.5vh 1.5vw;
+  background-color: #fff;
+}
+
+.container3BoldText {
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.container3LightText {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* *************************** section two ******************** */
+
+.sectionTwo {
+  background: #e7f1ff80;
+  margin: 0vh 0 0;
+  padding: 8vh 8vw 6vh;
+  gap: 4vh;
+}
+
+.uLine,
+.nLine {
+  display: none;
+}
+
+.sectionTwoTopBoldText {
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 0 5vw;
+  color: #475569;
+}
+
+.sectionTwoTopLightText {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  padding: 0 8vw;
+}
+
+.sectionTwoBottomBoldText {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #475569;
+}
+
+.sectionTwoBottomLightText {
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-right: 8vw;
+  line-height: 1.8vh;
+}
+
+/* **************************** section two end ********************** */
+
+/* **************************** section three start ********************** */
+.sectionThree {
+  position: relative;
+  margin: 6vh 7vw 0;
+  padding: 4vh 0;
+  background-color: #ebf1ff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.topFrame,
+.bottomFrame {
+  position: absolute;
+}
+
+.topFrame {
+  top: -16vh;
+  left: -3vw;
+  height: 20vh;
+  width: 20vw;
+}
+
+.bottomFrame {
+  bottom: -6vh;
+  right: -1vw;
+  height: 10vh;
+  width: 10vw;
+}
+
+.sectionThreeBoldText {
+  color: #475569;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.sectionThreeLightText {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0.5vh 0 0 0;
+}
+/* **************************** section three end ********************** */
+
+/* **************************** footer start ********************** */
+.desktopFooter {
+  display: none;
+}
+
+.footerTop {
+  padding: 5vh 7vw;
+}
+
+.h3 {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 1.3rem;
+}
+
+.footerTopGap {
+  gap: 5vh;
+}
+
+.blogGap {
+  gap: 30vw;
+}
+
+.servicesList,
+.contactList {
+  gap: 1.5vh;
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.footerBottom {
+  margin: 6vh 2vw 4vh 0;
+}
+
+.footerLogoContainer {
+  gap: 2vw;
+}
+
+.footerLogoContainerText {
+  font-size: 1.5rem;
+  color: #475569;
+  font-weight: 700;
+}
+
+.footerBottomText {
+  margin-top: 1.5rem;
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.footerIcons {
+  display: flex;
+  gap: 4vw;
+  margin: 2vh 0 0 0;
+}
+
+.faceBookIcon,
+.twitterIcon,
+.instagramIcon {
+  color: #5f8efe;
+}
+
+.copyrightContainer {
+  margin: 4vh 0 0 0;
+  gap: 1vh;
+}
+
+.copyrightText {
+  color: #475569;
+  font-size: 1rem;
+}
+
+.TermsOfUseText {
+  color: #3772fa;
+  border-right: 1.5px solid #64748b;
+  border-left: 1.5px solid #64748b;
+  padding: 0 1vw;
+  font-size: 1rem;
+}
+
+.privacyText {
+  color: #3772fa;
+  font-size: 1rem;
+}
+
+/* **************************** footer end********************** */
+
+/* ***********************************Media Queries*************************** */
+@media only screen and (min-width: 600px) {
+  /* **************************Mobile Menu******************************* */
+  .mobileMenu {
+    margin: 3vh -6vw 0;
+  }
+  /* **************************Mobile Menu******************************* */
+
+  /* ************************** header tablet design start********************************* */
+
+  .header {
+    height: 93vh;
+    overflow: hidden;
+    padding: 4vh 6vw;
+  }
+
+  .cudiumLogo {
+    width: 5vw;
+    height: 5vh;
+  }
+
+  .cudiumLogoText {
+    font-size: 2rem;
+  }
+
+  .navBarIcon {
+    width: 4vw;
+    height: 4vh;
+  }
+
+  .headerBoldText {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  .headerSubText {
+    font-weight: 400;
+    font-size: 1rem;
+  }
+
+  .headerButtons {
+    gap: 8vw;
+  }
+
+  .playstoreButton,
+  .appstoreButton {
+    gap: 3vw;
+    border-radius: 0.3rem;
+    padding: 2vh 4vw;
+  }
+
+  .appstoreIcon,
+  .playstoreIcon {
+    width: 3vw;
+    height: 3vh;
+  }
+
+  .headerBtnSubText {
+    font-size: 0.7rem;
+  }
+
+  .headerBtnBoldText {
+    font-size: 1.2rem;
+  }
+
+  .headerBottomContainer {
+    margin: 0 auto;
+    position: relative;
+  }
+
+  .headerBottomLeftContainer {
+    left: 2vw;
+    top: 32vh;
+    padding: 2vh 2vw 2vh;
+    gap: 2vh;
+  }
+
+  .headerBottomImg {
+    position: relative;
+    width: 60vw;
+    height: 45vh;
+    left: 20vw;
+  }
+
+  .headerBottomLeftContainerText {
+    font-size: 0.7rem;
+    margin: 0 1vw;
+    text-align: center;
+    text-wrap: nowrap;
+  }
+
+  .headerBottomLeftContainerNum {
+    font-size: 1.5rem;
+  }
+
+  .headerBottomRightContainer {
+    bottom: 42vh;
+    gap: 1vw;
+    width: 35vw;
+    padding: 1.7vh 2vw;
+  }
+
+  .headerbottomImg2 {
+    position: absolute;
+    height: 5vh;
+    width: 8vw;
+    right: -2vw;
+    top: -2vh;
+  }
+
+  .headerBottomRightBoldText {
+    font-size: 1.3rem;
+  }
+
+  .headerBottomRightSubText {
+    word-break: normal;
+    font-size: 0.8rem;
+  }
+  /* ************************** header tablet design end********************************* */
+
+  /* ****************** section one tablet design start ******************************************/
+  .kudaImg {
+    width: 8vw;
+    height: 8vh;
+  }
+
+  .gtbImg {
+    width: 6vw;
+    height: 6vh;
+  }
+
+  .aImg {
+    width: 8vw;
+    height: 8vh;
+    top: 40vh;
+  }
+
+  .balanceBox {
+    padding: 1.7vh;
+  }
+
+  .balanceFlex {
+    margin-top: 1.5vh;
+  }
+
+  .balanceText {
+    font-size: 1.2rem;
+  }
+
+  .balanceFig {
+    font-size: 1.4rem;
+  }
+
+  .amountBox {
+    margin: 2.4vh 0 0 0;
+  }
+
+  .amountContainerFig {
+    font-size: 1.2rem;
+    padding: 1vh 0;
+  }
+
+  .selectBankBoxText,
+  .enterAccountText {
+    font-size: 1.2rem;
+    padding: 1vh 0;
+  }
+
+  .ngnBox {
+    gap: 5vw;
+  }
+
+  .ngnText {
+    font-size: 1rem;
+  }
+
+  .nigFlag {
+    width: 3vw;
+    height: 3vh;
+  }
+
+  .ngnIcon {
+    height: 1.5vh;
+  }
+
+  .amountText,
+  .bankAcountText,
+  .accountNumberText {
+    font-size: 1.2rem;
+    margin: 4vh 0 0 0;
+  }
+
+  .sectionOneDesc,
+  .container3Desc,
+  .circleDesc {
+    margin: 4vh 7vw;
+    gap: 1rem;
+  }
+
+  .circleDesc {
+    margin-top: 12vh;
+  }
+
+  .sectionOneDescBoldText,
+  .container3DescBoldText,
+  .circleDescBoldText {
+    font-size: 1.8rem;
+  }
+
+  .container3DescBoldText {
+    margin-top: 4vh;
+  }
+
+  .sectionOneDescLightText,
+  .container3DescLightText,
+  .circleDescLightText {
+    font-size: 1.2rem;
+  }
+
+  .circleContainer {
+    margin: 3vh 0 0 0;
+  }
+
+  .sectionOneCircleImg {
+    width: 100vw;
+    height: 40vh;
+  }
+
+  .container3 {
+    margin-top: 13vh;
+    border-radius: 1rem;
+    gap: 4vh;
+  }
+
+  .image2 {
+    top: -3vh;
+    left: -5vw;
+  }
+
+  .checkmark {
+    top: 40vh;
+    left: 65vw;
+  }
+
+  .container3BoldText {
+    font-size: 1.2rem;
+  }
+
+  .container3LightText {
+    font-size: 1.5rem;
+  }
+
+  /* ****************** section one tablet design end ******************************************/
+
+  /* *************************** section two tablet design start******************** */
+  .sectionTwo {
+    gap: 8vh;
+  }
+  .sectionTwoBottom {
+    gap: 5vh;
+  }
+
+  .sectionTwoTopBoldText {
+    font-size: 1.8rem;
+  }
+
+  .sectionTwoTopLightText {
+    font-size: 1.2rem;
+  }
+
+  .sectionTwoBottomBoldText {
+    font-size: 1.5rem;
+  }
+
+  .sectionTwoBottomLightText {
+    font-size: 1.2rem;
+    line-height: 2.3vh;
+  }
+
+  /* **************************** section two tablet design end ********************** */
+
+  /* **************************** section three tablet design start ********************** */
+
+  .sectionThree {
+    margin: 10vh 7vw 0;
+  }
+
+  .sectionThreeBoldText {
+    font-size: 1.6rem;
+  }
+
+  .sectionThreeLightText {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  /* **************************** section three tablet design end ********************** */
+
+  /* **************************** footer tablet design start ********************** */
+
+  .footer {
+    margin: 6vh 0 0 0;
+  }
+
+  .footerTop {
+    padding: 5vh 15vw;
+  }
+
+  .h3 {
+    font-size: 1.6rem;
+  }
+
+  .footerTopGap {
+    gap: 7vh;
+  }
+
+  .blogGap {
+    gap: 20vw;
+  }
+
+  .servicesList,
+  .contactList {
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+
+  .footerBottom {
+    margin: 8vh 0 4vh 0;
+  }
+
+  .footerLogoContainer {
+    gap: 1vw;
+  }
+
+  .footerCudiumLogo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .footerLogoContainerText {
+    font-size: 2.5rem;
+  }
+
+  .footerBottomText {
+    margin-top: 2vh;
+    font-size: 1.3rem;
+  }
+
+  .footerIcons {
+    margin: 3vh 0 0 0;
+  }
+
+  .faceBookIcon,
+  .twitterIcon,
+  .instagramIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .copyrightContainer {
+    margin: 5vh 0 0 0;
+  }
+
+  .copyrightText {
+    font-size: 1.2rem;
+  }
+
+  .TermsOfUseText,
+  .privacyText {
+    font-size: 1.2rem;
+  }
+
+  /* **************************** footer tablet design end********************** */
+}
+
+/* *************************************** TABLET 2 Design******************************************** */
+@media only screen and (min-width: 768px) {
+  /* ************************** header tablet design start********************************* */
+
+  .header {
+    height: 100vh;
+  }
+
+  .cudiumLogoText {
+    font-size: 2.3rem;
+  }
+
+  .navBarIcon {
+    width: 4.5vw;
+    height: 4.5vh;
+  }
+
+  .headerBoldText {
+    font-size: 2.1rem;
+  }
+
+  .headerSubText {
+    font-size: 1.3rem;
+  }
+
+  .playstoreButton,
+  .appstoreButton {
+    gap: 2vw;
+    padding: 2vh 3vw;
+  }
+
+  .headerBtnSubText {
+    font-size: 0.8rem;
+  }
+
+  .headerBtnBoldText {
+    font-size: 1.3rem;
+  }
+
+  .headerBottomLeftContainer {
+    left: 3vw;
+    top: 30vh;
+    padding: 3vh 2vw 3vh;
+  }
+
+  .headerBottomImg {
+    width: 60vw;
+    height: 45vh;
+    left: 20vw;
+  }
+
+  .headerBottomLeftContainerText {
+    font-size: 0.8rem;
+  }
+
+  .headerBottomRightContainer {
+    padding: 2vh 2vw;
+  }
+
+  .headerBottomRightSubText {
+    font-size: 0.9rem;
+  }
+  /* ************************** header tablet design end********************************* */
+
+  /* ****************** section one tablet design start ******************************************/
+
+  .sectionOneDescLightText,
+  .container3DescLightText,
+  .circleDescLightText {
+    font-size: 1.3rem;
+  }
+
+  .sectionOneCircleImg {
+    width: 120vw;
+    height: 50vh;
+  }
+
+  .container3 {
+    padding-bottom: 5vh;
+  }
+
+  .container3BoldText {
+    font-size: 1.3rem;
+  }
+
+  .container3LightText {
+    font-size: 1.6rem;
+  }
+
+  /* ****************** section one tablet design end ******************************************/
+
+  /* *************************** section two tablet design start******************** */
+
+  .sectionTwoTopBoldText {
+    font-size: 2rem;
+  }
+
+  .sectionTwoTopLightText {
+    font-size: 1.5rem;
+  }
+
+  .sectionTwoBottomBoldText {
+    font-size: 1.7rem;
+  }
+
+  .sectionTwoBottomLightText {
+    font-size: 1.4rem;
+    line-height: 2.6vh;
+  }
+
+  /* **************************** section two tablet design end ********************** */
+
+  /* **************************** section three tablet design start ********************** */
+
+  .sectionThreeBoldText {
+    font-size: 2rem;
+  }
+
+  .sectionThreeLightText {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  /* **************************** section three tablet design end ********************** */
+
+  /* **************************** footer tablet design start ********************** */
+
+  .h3 {
+    font-size: 2rem;
+  }
+
+  .servicesList,
+  .contactList {
+    font-size: 1.5rem;
+  }
+
+  .footerBottomText {
+    font-size: 1.5rem;
+  }
+
+  .copyrightContainer {
+    gap: 3vw;
+  }
+
+  .TermsOfUseText,
+  .privacyText,
+  .copyrightText {
+    font-size: 1.4rem;
+  }
+
+  /* **************************** footer tablet design end********************** */
+}
+
+/* *******************************************TABLET 2 Design************************************************ */
+
+/* ********************************* desktop design ****************** */
+@media only screen and (min-width: 992px) {
+  .mobileMenuNone {
+    display: none;
+  }
+
+  .navBarIcon {
+    display: none;
+  }
+
+  .desktopServiceMenu,
+  .navButton {
+    display: flex;
+  }
+
+  .nav {
+    margin-right: 0;
+  }
+
+  .desktopNav {
+    justify-content: space-between;
+  }
+
+  /* ***************************** header ******************** */
+  /* ************nav************** */
+
+  .cudiumLogo {
+    width: 2vw;
+    height: 5vh;
+  }
+
+  .cudiumLogoText {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .desktopServiceMenuServiceText {
+    font-weight: 600;
+    font-size: 1.3rem;
+    position: relative;
+  }
+
+  /* *************************dropdown */
+  .dropdown {
+    position: relative;
+    display: inline-block;
+  }
+
+  .dropBtn {
+    cursor: pointer;
+  }
+
+  .dropdownContent {
+    display: none;
+    position: absolute;
+    left: -1.5vw;
+    background-color: #f9f9f9;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+    z-index: 1;
+  }
+
+  .dropdownContent p {
+    color: black;
+    padding: 1.5vh;
+    font-size: 1rem;
+    font-weight: 700;
+    text-wrap: nowrap;
+  }
+
+  .dropdownContent p:hover {
+    background-color: #f1f1f1;
+  }
+
+  .dropdown:hover .dropdownContent {
+    display: block;
+    cursor: pointer;
+  }
+
+  /* *************************dropdown */
+
+  .servicesIcon {
+    color: #f6f8fc;
+    margin: 0.2vh 0 0 0.2vw;
+    height: 2vh;
+  }
+
+  .desktopServiceMenuBlogText,
+  .desktopServiceMenuHelpText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .navButtonText {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 2.3vh 2vh;
+  }
+
+  /* ************nav************* */
+
+  .header {
+    height: auto;
+    overflow: hidden;
+    padding: 5vh 7vw 0vh 6vw;
+  }
+
+  .mobileIcons {
+    display: none;
+  }
+
+  .desktopHeaderBottom {
+    display: flex;
+    width: 100%;
+  }
+
+  .desktopHeaderBottomLeft {
+    margin: 13vh 0 0 0;
+    width: 50%;
+  }
+
+  .headerBoldText {
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 0 5vw 0 0;
+  }
+
+  .headerSubText {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-top: 2vh;
+    padding-right: 12vw;
+  }
+
+  .headerButtons {
+    margin-top: 10vh;
+    gap: 2vw;
+  }
+
+  .playstoreButton,
+  .appstoreButton {
+    gap: 0.5vw;
+    padding: 2.5vh 1.5vw;
+    padding-left: 0;
+  }
+
+  .headerBtnSubText {
+    font-size: 0.6rem;
+  }
+
+  .headerBtnBoldText {
+    font-size: 1.1rem;
+  }
+
+  .desktopHeaderBottomRight {
+    width: 50%;
+    margin: 0;
+    align-items: center;
+  }
+
+  .headerBottomImg {
+    position: relative;
+    height: 65vh;
+    left: 0;
+    z-index: 10;
+    margin-bottom: -17vh;
+  }
+
+  .headerbottomImg2 {
+    position: absolute;
+    left: 14vw;
+    bottom: 11vh;
+  }
+
+  .desktopHeaderBottomLeftContainer {
+    width: 15vw;
+    padding: 3vh 0;
+    top: 43vh;
+    left: -15vw;
+    z-index: 100;
+  }
+
+  .desktopHeaderBottomRightContainer {
+    width: 15vw;
+    padding: 3vh 0;
+    left: 7vw;
+    bottom: 43vh;
+    z-index: 100;
+  }
+
+  .headerBottomLeftContainerText {
+    font-size: 0.7rem;
+  }
+
+  .headerBottomLeftContainerNum {
+    font-size: 1.4rem;
+  }
+
+  .headerBottomRightContainerFlexRow {
+    gap: 0.5vw;
+  }
+
+  .headerBottomRightBoldText {
+    font-size: 1rem;
+  }
+
+  .headerBottomRightSubText {
+    font-size: 0.65rem;
+    line-height: 1rem;
+    padding: 0 0.5vw;
+  }
+
+  .headerbottomImg2 {
+    left: 10vw;
+  }
+
+  /* ********************************** Section One start*************************** */
+
+  .kudaImg {
+    left: 6vw;
+    top: -5vh;
+    z-index: 11;
+  }
+
+  .gtbImg {
+    top: -6vh;
+    left: 30vw;
+    z-index: 11;
+  }
+
+  .aImg {
+    top: 30vh;
+    left: 32vw;
+    z-index: 11;
+  }
+
+  .sectionOne {
+    width: 100vw;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 5vh;
+    padding: 15vh 9vw;
+  }
+
+  .desktopSectionOnefiftyVw {
+    width: 50vw;
+  }
+
+  .sectionOneBoxContainer {
+    width: 40vw;
+  }
+
+  .sectionOneBox {
+    position: relative;
+    margin: 0 0 0 6.9vw;
+    padding: 6vh 4vw;
+    width: 30vw;
+    z-index: 10;
+  }
+
+  .desktopCard {
+    position: absolute;
+    display: flex;
+    left: -7vw;
+    bottom: 15vh;
+    z-index: -1;
+  }
+
+  .balanceBox {
+    padding: 0.5vw;
+  }
+
+  .balanceText {
+    font-size: 0.9rem;
+  }
+
+  .balanceFig {
+    font-size: 1.2rem;
+  }
+
+  .amountContainerFig {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  .selectBankBoxText,
+  .enterAccountText {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  .ngnText {
+    font-size: 0.8rem;
+  }
+
+  .nigFlag {
+    width: 2vw;
+    height: 2vh;
+  }
+
+  .ngnIcon {
+    height: 1.5vh;
+  }
+  .boxes {
+    gap: 1vw;
+  }
+
+  .amountText,
+  .bankAcountText,
+  .accountNumberText {
+    font-size: 0.9rem;
+    margin-top: 2.5vh;
+  }
+
+  .sectionOneDesc {
+    width: 40vw;
+    margin: 0;
+    padding: 0 0 0 10vw;
+  }
+
+  .circleDesc {
+    width: 40vw;
+    margin: 0 0 0 0vw;
+    padding: 0 2vw;
+  }
+
+  .container3Desc {
+    width: 40vw;
+    margin: 0 0 0 0;
+    padding: 0 0 0 10vw;
+  }
+
+  .sectionOneDescBoldText {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .sectionOneDescLightText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .circleDescBoldText {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .circleDescLightText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .circleContainer {
+    width: 30vw;
+    margin: 0 5vw 0 0;
+  }
+
+  .sectionOneCircleImg {
+    margin: 0 0 0 9vw;
+    width: 130vw;
+    height: 55vh;
+  }
+
+  .container3 {
+    position: relative;
+    width: auto;
+    gap: 4vh;
+    margin: 0 0 0 3vw;
+    padding: 4vh 3vw 5vh;
+    z-index: -1;
+  }
+
+  .container3Shadow {
+    position: absolute;
+    right: -3vw;
+    top: -3vh;
+    width: 10vw;
+    height: 20vh;
+    background-color: #f1f4f9;
+    z-index: 10;
+  }
+
+  .container3DescBoldText {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .container3DescLightText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .container3Elem1,
+  .container3Elem2,
+  .container3Elem3 {
+    gap: 7vw;
+    border-radius: 0.5rem;
+    padding: 0.7rem 3vw 1rem 0.7rem;
+    background-color: #fff;
+  }
+
+  .checkmark {
+    width: 5vw;
+    top: 23vw;
+    left: 28vw;
+  }
+
+  .image2 {
+    top: -3vh;
+    left: -2vw;
+  }
+
+  .container3BoldText {
+    color: #94a3b8;
+    font-size: 1rem;
+    font-weight: 400;
+  }
+
+  .container3LightText {
+    color: #64748b;
+    font-weight: 600;
+    font-size: 1rem;
+  }
+
+  .circleDesc,
+  .circleContainer,
+  .container3,
+  .container3Desc {
+    margin-top: 20vh;
+  }
+  /* ********************************** Section One end *************************** */
+
+  /* ********************************** Section Two *************************** */
+  .sectionTwo {
+    margin-top: 20vh;
+  }
+
+  .sectionTwoBottom {
+    position: relative;
+    margin: 5vh 0 3vh;
+    flex-direction: row;
+    gap: 12vw;
+    justify-content: space-between;
+  }
+
+  .desktopSectionTwoBottomFlexColumn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sectionTwoBottomBoldText {
+    font-size: 1.3rem;
+  }
+
+  .sectionTwoBottomLightText {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    padding: 0 1vw;
+  }
+
+  .uLine,
+  .nLine {
+    display: block;
+    width: 50vw;
+    height: 10vh;
+    position: absolute;
+  }
+
+  .uLine {
+    right: -0.1vw;
+    top: 3vh;
+  }
+
+  .nLine {
+    top: -4vh;
+    left: 1vw;
+  }
+
+  /* ********************************** Section Two *************************** */
+
+  /* ********************************** Section Three *************************** */
+  .sectionThree {
+    margin: 13vh 6.5vw;
+  }
+
+  .topFrame {
+    top: -20vh;
+    left: -1vw;
+    height: 30vh;
+    width: 10vw;
+  }
+
+  .bottomFrame {
+    bottom: -4vh;
+    right: -2vw;
+    height: 18vh;
+    width: 10vw;
+  }
+
+  .sectionThreeBoldText {
+    font-size: 2rem;
+  }
+
+  .sectionThreeLightText {
+    font-size: 1.3rem;
+  }
+  /* ********************************** Section Three *************************** */
+
+  /* ********************************** desktop Footer *************************** */
+  .footer {
+    display: none;
+  }
+
+  .desktopFooter {
+    display: flex;
+    margin: 15vh 6.5vw 8vh;
+  }
+
+  .desktopFooterTop {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #cbd4e1;
+    padding-bottom: 8vh;
+    width: 100%;
+  }
+
+  .desktopFooterColumnFiftyVw {
+    width: 50%;
+  }
+
+  .desktopFooterLogoContainer {
+    gap: 1rem;
+  }
+
+  .footerCudiumLogo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .footerLogoContainerText {
+    font-size: 2rem;
+  }
+
+  .footerBottomText {
+    padding-right: 12rem;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  .footerIcons {
+    margin-top: 1rem;
+  }
+
+  .faceBookIcon,
+  .twitterIcon,
+  .instagramIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .desktopFooterColumntwentyFiveVw {
+    width: 25%;
+    margin-left: 10vw;
+  }
+
+  .h3 {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .servicesList,
+  .contactList {
+    margin: 2rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  .faqsText {
+    margin-top: 1rem;
+  }
+
+  .copyrightContainer {
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .copyrightText,
+  .TermsOfUseText,
+  .privacyText {
+    font-size: 0.8rem;
+  }
+
+  /* ********************************** desktop Footer *************************** */
+}

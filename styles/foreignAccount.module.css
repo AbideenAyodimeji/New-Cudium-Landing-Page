@@ -1,0 +1,1851 @@
+/* **************Utilities*********** */
+.whiteColor {
+  color: #fff;
+}
+.whiteBcg {
+  background-color: #fff;
+}
+.blackColor {
+  color: #000;
+}
+.blackBcg {
+  background-color: #000;
+}
+
+.flex,
+.flexRow,
+.flexColumn,
+.spaceAround,
+.alignCenter,
+.justifyCenter,
+.spaceBetween,
+.alignFlexEnd,
+.alignFlexStart {
+  display: flex;
+}
+.flexColumn {
+  flex-direction: column;
+}
+.spaceBetween {
+  justify-content: space-between;
+}
+.spaceAround {
+  justify-content: space-around;
+}
+.alignCenter {
+  align-items: center;
+}
+.alignFlexEnd {
+  align-items: flex-end;
+}
+.alignFlexStart {
+  align-items: flex-start;
+}
+.justifyCenter {
+  justify-content: center;
+}
+
+.smallGap {
+  gap: 0.3rem;
+}
+.smallerGap {
+  gap: 0.2rem;
+}
+
+.halfRemGap {
+  gap: 0.5rem;
+}
+.oneRemGap {
+  gap: 1rem;
+}
+.twoRemGap {
+  gap: 2rem;
+}
+
+.oneVhGap {
+  gap: 1vh;
+}
+.oneHalfVhGap {
+  gap: 1.5vh;
+}
+.twoVhGap {
+  gap: 2vh;
+}
+.threeVhGap {
+  gap: 3vh;
+}
+
+.textAlign {
+  text-align: center;
+}
+
+.no-scroll {
+  overflow: hidden;
+}
+/* ******************Utilities*************** */
+
+/* ++++++++++++++++++++++++++++++++ header style starts ++++++++++++++++++++++ */
+.header {
+  width: 100vw;
+  height: auto;
+  background-image: url('/Images/header-background.png');
+  overflow: hidden;
+  padding: 3.5vh 7vw 0;
+  background-size: cover;
+}
+
+.nav {
+  position: relative;
+}
+
+.leftNavigation {
+  display: flex;
+  align-items: center;
+  gap: 0.5vw;
+}
+
+.cudiumLogoText {
+  font-weight: 700;
+  font-size: 1.3rem;
+}
+
+.desktopServiceMenu,
+.navButton {
+  display: none;
+}
+
+.desktopServiceMenuServiceText {
+  color: #f6f8fc;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+/* *************************dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropBtn {
+  cursor: pointer;
+}
+
+.dropdownContent {
+  display: none;
+  position: absolute;
+  left: -0.9vw;
+  background-color: #f9f9f9;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdownContent p {
+  color: black;
+  padding: 1.5vh;
+  font-size: 1rem;
+  font-weight: 700;
+  text-wrap: nowrap;
+}
+
+.dropdownContent p:hover {
+  background-color: #f1f1f1;
+}
+
+.dropdown:hover .dropdownContent {
+  display: block;
+  cursor: pointer;
+}
+
+/* *************************dropdown */
+
+.desktopServiceMenuBlogText,
+.desktopServiceMenuHelpText {
+  color: #cbd4e1;
+  font-weight: 500;
+  font-size: 0.8rem;
+}
+
+.navButton {
+  background-color: transparent;
+  align-items: center;
+  justify-self: center;
+}
+
+.navButtonText {
+  font-size: 0.7rem;
+  font-weight: 300;
+  text-wrap: nowrap;
+  background-color: transparent;
+  border: 1px solid #f6f8fc;
+  border-radius: 0.5rem;
+  padding: 0.5rem 0.5rem;
+}
+
+.iconWrapper {
+  perspective: 1000px;
+  transition: transform 0.6s ease-in-out, opacity 0.6s ease-in-out;
+}
+
+/* Animation states */
+.menuOpen {
+  opacity: 1;
+  transform: rotateY(0deg); /* Default position */
+}
+
+.menuClosed {
+  opacity: 1;
+  transform: rotateY(180deg); /* Flip the icon */
+}
+
+.navBarIcon {
+  height: 1.5rem;
+  color: #fff;
+  cursor: pointer;
+}
+
+.navXicon {
+  color: #fff;
+  height: 1.5rem;
+  cursor: pointer;
+}
+
+@keyframes mobileMenuAnimationEnter {
+  from {
+    left: -100vw;
+    opacity: 0;
+  }
+  to {
+    left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes mobileMenuAnimationExit {
+  from {
+    left: 0vw;
+    opacity: 1;
+  }
+  to {
+    left: -100vw;
+    opacity: 1;
+  }
+}
+
+.mobileMenu {
+  margin: 3vh -7vw 0;
+  padding: 1vh 7vw;
+  background-image: url('/Images/header-background.png');
+  background-size: cover;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  right: 0;
+  top: 5vw;
+  z-index: 100;
+  background-attachment: fixed;
+  display: none;
+}
+
+.mobileMenuOpen {
+  animation: mobileMenuAnimationEnter 1s ease-in-out;
+  background-attachment: fixed;
+}
+
+.mobileMenuClosing {
+  animation: mobileMenuAnimationExit 1s ease-in-out;
+  /* display: flex; */
+}
+
+.mobileMenuListItems {
+  list-style: none;
+  gap: 2rem;
+}
+
+.mobileMenuButton {
+  background-color: #3772fa;
+  border: 2px solid black;
+  border-radius: 0.5rem;
+  padding: 1vh 2vw;
+}
+
+.mobileMenuButtonText {
+  color: #fff;
+  font-size: 1rem;
+}
+
+.mobileMenuServiceText {
+  font-weight: 600;
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.mobileMenuBlogText {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.mobileMenuHelpText {
+  color: #fff;
+  font-size: 1.2rem;
+}
+
+.headerCenterContainer {
+  margin-top: 5vh;
+}
+
+.headerBoldText {
+  color: #f6f8fc;
+  font-weight: 600;
+  font-size: 1.5rem;
+  padding: 0 10vw 0 0;
+}
+
+.headerSubText {
+  color: #e2e8f0;
+  font-weight: 400;
+  font-size: 1rem;
+  margin-top: 0.7rem;
+  padding-right: 15vw;
+}
+
+.headerButtons {
+  margin: 4vh 0 0 0;
+  gap: 4vw;
+}
+
+.playstoreButton,
+.appstoreButton {
+  gap: 2vw;
+  border-radius: 0.3rem;
+  padding: 1.3vh 2.5vw;
+  border: none;
+}
+
+.playstoreIcon {
+  width: 3.5vw;
+  height: 3.5vh;
+  color: #f6f8fc;
+}
+
+.appstoreIcon {
+  color: #f6f8fc;
+  width: 3vw;
+  height: 3vh;
+}
+
+.xSolid {
+  display: none;
+}
+
+.headerBtnSubText {
+  font-size: 0.7rem;
+}
+
+.headerBtnBoldText {
+  font-size: 1rem;
+}
+
+.headerBottom {
+  margin: 7vh;
+}
+
+.foreignAcctHeaderImg {
+  width: 80vw;
+  height: 30vh;
+}
+
+/* +++++++++++++++++++++++++++++++++++++++++++ header style ends++++++++++++++++++++++++++++ */
+
+/* ++++++++++++++++++++++++++++++++++++ section-one style starts ++++++++++++++++++++++++ */
+
+.sectionOne {
+  position: relative;
+  padding: 0vh auto 5vh;
+  background-color: #fdfdfe;
+}
+
+.sectionOneBox {
+  position: relative;
+  margin-top: 12vh;
+  padding: 2.5vh 4vw;
+  background-color: #f6f8fc;
+  height: auto;
+  width: 70vw;
+  border-radius: 1rem;
+  z-index: 100;
+}
+
+.sectionOneBoxCard {
+  position: absolute;
+  left: 17vw;
+  top: -7vh;
+  padding: 2vh;
+  border-radius: 0.5rem;
+  height: auto;
+  width: 16vw;
+  background-color: #f6f8fc;
+  z-index: 10;
+  display: none;
+}
+
+.transactionSuccesful {
+  color: #f5abab;
+  font-size: 0.7rem;
+  padding: 0.5vh;
+  border-radius: 1rem;
+  text-align: center;
+  width: 12vw;
+  background-color: #27ae601a;
+}
+
+.sectionOneBoxCardP2 {
+  font-size: 0.7rem;
+  color: #94a3b8;
+  margin: 1vh 2vw 0 0;
+}
+.sectionOneBoxCardP3 {
+  color: #64748b;
+  font-size: 0.7rem;
+  margin: 0.6vh 0 0 0;
+}
+
+.sectionOneBoxCardIcon {
+  position: absolute;
+  right: -1vw;
+  top: 0vh;
+}
+
+.foreignSectionIcon1 {
+  position: absolute;
+  left: -4vw;
+  top: -4vh;
+}
+
+.foreignSectionIcon3 {
+  position: absolute;
+  bottom: 5vh;
+  right: -5vw;
+}
+
+.foreignSectionIcon4 {
+  position: absolute;
+  bottom: -3vh;
+  left: -8vw;
+}
+
+.balanceBox {
+  background-color: #3772fa;
+  padding: 1.2vh 2vw;
+  border-radius: 0.5rem;
+}
+
+.balanceFlex {
+  margin-top: 1vh;
+}
+
+.balanceText {
+  color: #f1f4f9;
+  font-size: 1rem;
+}
+
+.balanceFig {
+  font-weight: 700;
+  font-size: 1.2rem;
+}
+
+.amountBox {
+  margin: 2vh 0 0 0;
+}
+
+.amountContainer,
+.ngnBox,
+.enterEmail {
+  background-color: #e2e8f0;
+  padding: 1rem;
+  border-radius: 0.5rem;
+  margin: 0.7rem 0 0 0;
+}
+
+.sendCashAmountContainer,
+.sendCashNgnBox,
+.sendCashEnterEmail {
+  background-color: #e2e8f0;
+  padding: 1.5vh 2.5vw;
+  border-radius: 0.5rem;
+  margin: 1vh 0 0 0;
+}
+
+.amountContainer,
+.sendCashAmountContainer {
+  flex-grow: 3;
+}
+
+.amountContainerFig,
+.sendCashAmountContainerFig {
+  color: #64748b;
+  font-size: 1rem;
+}
+
+.enterEmailText {
+  font-size: 1rem;
+  color: #94a3b8;
+}
+
+.nextButton,
+.sendCashNextButton {
+  margin: 2rem auto 0;
+  padding: 0.8rem 6rem;
+  background-color: #3772fa;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  border-radius: 0.5rem;
+}
+
+.ngnBox,
+.sendCashNgnBox {
+  gap: 1rem;
+}
+
+.usdText {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 0.7rem;
+  margin-top: 0.1rem;
+}
+
+.usaFlag {
+  margin-right: 0.2rem;
+  border-radius: 0.4rem;
+}
+
+.ngnIcon {
+  color: #94a3b8;
+  height: 0.6rem;
+}
+.boxes {
+  gap: 3vw;
+}
+
+.amountText,
+.recipientEmailText {
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 3vh 0 0 0;
+}
+
+.sendCashAmountText,
+.sendCashRecipientEmailText {
+  color: #64748b;
+  font-size: 1rem;
+  font-weight: 600;
+  margin: 1.5rem 0 0 0;
+}
+
+.sectionOneDesc {
+  margin: 5vh 15vw;
+  gap: 1.5vh;
+}
+
+.circleDesc {
+  margin: 10vh 15vw 0;
+  gap: 2vh;
+}
+
+.sendCashBox {
+  position: relative;
+  z-index: 10;
+  margin: 3vh 0 0 0;
+  background-color: #f6f8fc;
+  padding: 3vh 5vw;
+  border-radius: 0.5rem;
+}
+
+.LineImg,
+.feePercentage {
+  display: none;
+  position: absolute;
+}
+
+.LineImg {
+  bottom: -13vh;
+  left: 4vw;
+  width: 5vw;
+  height: 10vh;
+}
+
+.feePercentage {
+  right: -9vw;
+  top: 15vh;
+  width: 10vw;
+  height: 10vh;
+  z-index: 11;
+}
+
+.sendCashBoxCard {
+  display: none;
+}
+
+.sendCashText {
+  font-weight: 600;
+  font-size: 1.3rem;
+}
+
+.container3Desc {
+  margin: -3vh 15vw;
+  gap: 1.5vh;
+  padding-bottom: 15vh;
+}
+
+.sectionOneDescBoldText,
+.container3DescBoldText,
+.circleDescBoldText {
+  font-weight: 700;
+  font-size: 1.3rem;
+  text-align: center;
+}
+
+.sectionOneDescLightText,
+.container3DescLightText,
+.circleDescLightText {
+  text-align: center;
+  font-weight: 500;
+  font-size: 1.1rem;
+  color: #94a3b8;
+}
+
+.container3 {
+  margin: 8vh 0 0 0;
+}
+
+.container3Img {
+  width: 85vw;
+  height: 40vh;
+}
+
+.container3BoldText {
+  color: #94a3b8;
+  font-size: 1rem;
+  font-weight: 500;
+}
+
+.container3LightText {
+  color: #64748b;
+  font-weight: 600;
+  font-size: 1.2rem;
+}
+
+/* *************************** section two ******************** */
+
+.sectionTwo {
+  background: #e7f1ff80;
+  margin: 0vh 0 0;
+  padding: 6vh 8vw;
+  gap: 4vh;
+}
+
+.uLine,
+.nLine {
+  display: none;
+}
+
+.sectionTwoTopBoldText {
+  font-weight: 700;
+  font-size: 1.8rem;
+  padding: 0 5vw;
+  color: #475569;
+}
+
+.sectionTwoTopLightText {
+  font-size: 1.1rem;
+  color: #94a3b8;
+  padding: 0 8vw;
+  line-height: 1.2rem;
+}
+
+.sectionTwoBottomBoldText {
+  font-weight: 600;
+  font-size: 1.5rem;
+  color: #475569;
+}
+
+.sectionTwoBottomLightText {
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 1rem;
+  padding-right: 8vw;
+  line-height: 1.2rem;
+}
+
+/* **************************** section two end ********************** */
+
+/* **************************** section three start ********************** */
+.sectionThree {
+  position: relative;
+  margin: 6vh 7vw 0;
+  padding: 4vh 0;
+  background-color: #ebf1ff;
+  text-align: center;
+  overflow: hidden;
+}
+
+.topFrame,
+.bottomFrame {
+  position: absolute;
+}
+
+.topFrame {
+  top: -16vh;
+  left: -3vw;
+  height: 20vh;
+  width: 20vw;
+}
+
+.bottomFrame {
+  bottom: -6vh;
+  right: -1vw;
+  height: 10vh;
+  width: 10vw;
+}
+
+.sectionThreeBoldText {
+  color: #475569;
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.sectionThreeLightText {
+  color: #64748b;
+  font-size: 0.8rem;
+  font-weight: 400;
+  margin: 0.5vh 0 0 0;
+}
+/* **************************** section three end ********************** */
+
+/* **************************** footer start ********************** */
+.desktopFooter {
+  display: none;
+}
+
+.footerTop {
+  padding: 5vh 7vw;
+}
+
+.h3 {
+  font-weight: 600;
+  color: #64748b;
+  font-size: 1.3rem;
+}
+
+.footerTopGap {
+  gap: 5vh;
+}
+
+.blogGap {
+  gap: 30vw;
+}
+
+.servicesList,
+.contactList {
+  gap: 1.5vh;
+  color: #94a3b8;
+  font-weight: 400;
+  font-size: 1rem;
+}
+
+.footerBottom {
+  margin: 6vh 2vw 4vh 0;
+}
+
+.footerLogoContainer {
+  gap: 2vw;
+}
+
+.footerLogoContainerText {
+  font-size: 1.5rem;
+  color: #475569;
+  font-weight: 700;
+}
+
+.footerBottomText {
+  margin-top: 1.5rem;
+  color: #64748b;
+  font-size: 1.1rem;
+  font-weight: 400;
+}
+
+.footerIcons {
+  display: flex;
+  gap: 4vw;
+  margin: 2vh 0 0 0;
+}
+
+.faceBookIcon,
+.twitterIcon,
+.instagramIcon {
+  color: #5f8efe;
+}
+
+.copyrightContainer {
+  margin: 4vh 0 0 0;
+  gap: 1vh;
+}
+
+.copyrightText {
+  color: #475569;
+  font-size: 1rem;
+}
+
+.TermsOfUseText {
+  color: #3772fa;
+  border-right: 1.5px solid #64748b;
+  border-left: 1.5px solid #64748b;
+  padding: 0 1vw;
+  font-size: 1rem;
+}
+
+.privacyText {
+  color: #3772fa;
+  font-size: 1rem;
+}
+
+/* **************************** footer end********************** */
+
+/* ***********************************Media Queries*************************** */
+@media only screen and (min-width: 600px) {
+  /* **************************Mobile Menu******************************* */
+  .mobileMenu {
+    margin: 3vh -6vw 0;
+  }
+  /* **************************Mobile Menu******************************* */
+
+  /* ************************** header tablet design start********************************* */
+
+  .header {
+    height: auto;
+    overflow: hidden;
+    padding: 4vh 6vw;
+  }
+
+  .cudiumLogo {
+    width: 5vw;
+    height: 5vh;
+  }
+
+  .cudiumLogoText {
+    font-size: 2rem;
+  }
+
+  .navBarIcon {
+    width: 4vw;
+    height: 4vh;
+  }
+
+  .headerBoldText {
+    font-weight: 600;
+    font-size: 2rem;
+  }
+
+  .headerSubText {
+    font-weight: 400;
+    font-size: 1.5rem;
+  }
+
+  .headerButtons {
+    gap: 8vw;
+  }
+
+  .playstoreButton,
+  .appstoreButton {
+    gap: 3vw;
+    border-radius: 0.3rem;
+    padding: 2vh 4vw;
+  }
+
+  .appstoreIcon,
+  .playstoreIcon {
+    width: 3vw;
+    height: 3vh;
+  }
+
+  .headerBtnSubText {
+    font-size: 0.7rem;
+  }
+
+  .headerBtnBoldText {
+    font-size: 1.2rem;
+  }
+
+  .headerBottom {
+    margin: 7vh;
+  }
+
+  .foreignAcctHeaderImg {
+    width: 90vw;
+    height: 40vh;
+    margin-bottom: -4vh;
+  }
+
+  /* ************************** header tablet design end********************************* */
+
+  /* ****************** section one tablet design start ******************************************/
+
+  .foreignSectionIcon3 {
+    bottom: 8vh;
+  }
+
+  .foreignSectionIcon4 {
+    bottom: 0vh;
+  }
+
+  .balanceBox {
+    padding: 1.7vh;
+  }
+
+  .balanceFlex {
+    margin-top: 1.5vh;
+  }
+
+  .balanceText {
+    font-size: 1.2rem;
+  }
+
+  .balanceFig {
+    font-size: 1.4rem;
+  }
+
+  .amountBox {
+    margin: 2.4vh 0 0 0;
+  }
+
+  .amountContainerFig {
+    font-size: 1.2rem;
+    padding: 1vh 2vw;
+  }
+
+  .enterEmailText {
+    font-size: 1.2rem;
+    padding: 1vh 2vw;
+  }
+
+  .nextButton,
+  .sendCashNextButton {
+    margin: 3rem auto 0;
+    padding: 2vh 20vw;
+  }
+
+  .ngnBox {
+    gap: 4vw;
+  }
+
+  .usdText {
+    font-size: 1rem;
+    margin-bottom: 0.1vh;
+  }
+
+  .usaFlag {
+    width: 3vw;
+    height: 3vh;
+  }
+
+  .ngnIcon {
+    height: 1.5vh;
+  }
+
+  .amountText,
+  .recipientEmailText {
+    font-size: 1.2rem;
+    margin: 4vh 0 0 0;
+  }
+
+  .sectionOneDesc,
+  .container3Desc,
+  .circleDesc {
+    margin: 4vh 7vw;
+    gap: 1rem;
+  }
+
+  .container3Desc {
+    margin-top: -4rem;
+  }
+
+  .circleDesc {
+    margin-top: 15vh;
+  }
+
+  .sendCashBox {
+    margin: 0;
+    padding: 3vh 5vw;
+  }
+
+  .sendCashText {
+    font-size: 1.5rem;
+  }
+
+  .sectionOneDescBoldText,
+  .container3DescBoldText,
+  .circleDescBoldText {
+    font-size: 1.8rem;
+  }
+
+  .container3DescBoldText {
+    margin-top: 7vh;
+  }
+
+  .sectionOneDescLightText,
+  .container3DescLightText,
+  .circleDescLightText {
+    font-size: 1.2rem;
+  }
+
+  .container3 {
+    margin: 15vh 0 0 0;
+  }
+
+  .container3Img {
+    width: 80vw;
+    height: 40vh;
+  }
+
+  .container3BoldText {
+    font-size: 1.2rem;
+  }
+
+  .container3LightText {
+    font-size: 1.5rem;
+  }
+
+  /* ****************** section one tablet design end ******************************************/
+
+  /* *************************** section two tablet design start******************** */
+  .sectionTwo {
+    gap: 8vh;
+  }
+  .sectionTwoBottom {
+    gap: 5vh;
+  }
+
+  .sectionTwoTopBoldText {
+    font-size: 1.8rem;
+  }
+
+  .sectionTwoTopLightText {
+    font-size: 1.2rem;
+  }
+
+  .sectionTwoBottomBoldText {
+    font-size: 1.5rem;
+  }
+
+  .sectionTwoBottomLightText {
+    font-size: 1.2rem;
+    line-height: 1.5rem;
+  }
+
+  /* **************************** section two tablet design end ********************** */
+
+  /* **************************** section three tablet design start ********************** */
+
+  .sectionThree {
+    margin: 10vh 7vw 0;
+  }
+
+  .sectionThreeBoldText {
+    font-size: 1.6rem;
+  }
+
+  .sectionThreeLightText {
+    font-size: 1.1rem;
+    font-weight: 400;
+  }
+  /* **************************** section three tablet design end ********************** */
+
+  /* **************************** footer tablet design start ********************** */
+
+  .footer {
+    margin: 6vh 0 0 0;
+  }
+
+  .footerTop {
+    padding: 5vh 15vw;
+  }
+
+  .h3 {
+    font-size: 1.6rem;
+  }
+
+  .footerTopGap {
+    gap: 7vh;
+  }
+
+  .blogGap {
+    gap: 20vw;
+  }
+
+  .servicesList,
+  .contactList {
+    gap: 1rem;
+    font-weight: 400;
+    font-size: 1.3rem;
+  }
+
+  .footerBottom {
+    margin: 8vh 0 4vh 0;
+  }
+
+  .footerLogoContainer {
+    gap: 1vw;
+  }
+
+  .footerCudiumLogo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .footerLogoContainerText {
+    font-size: 2.5rem;
+  }
+
+  .footerBottomText {
+    margin-top: 2vh;
+    font-size: 1.3rem;
+  }
+
+  .footerIcons {
+    margin: 3vh 0 0 0;
+  }
+
+  .faceBookIcon,
+  .twitterIcon,
+  .instagramIcon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
+
+  .copyrightContainer {
+    margin: 5vh 0 0 0;
+  }
+
+  .copyrightText {
+    font-size: 1.2rem;
+  }
+
+  .TermsOfUseText,
+  .privacyText {
+    font-size: 1.1rem;
+  }
+}
+/* **************************** footer tablet design end********************** */
+
+/* 
+@media only screen and (min-width: 768px) {
+  .desktopServiceMenu {
+    display: flex;
+  }
+
+  .desktopServiceMenuServiceText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .navButton {
+    display: flex;
+  }
+
+  .serviceIcon {
+    margin: 0.3rem 0 0 0.3rem;
+  }
+
+  .desktopServiceMenuBlogText,
+  .desktopServiceMenuHelpText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .navButtonText {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 1rem 1rem;
+  }
+
+  .mobileIcons {
+    display: none;
+  }
+
+  .headerBoldText,
+  .headerSubText {
+    padding-right: 20vw;
+  }
+} */
+
+/* *************************************** TABLET 2 Design******************************************** */
+@media only screen and (min-width: 768px) {
+  /* ************************** header tablet design start********************************* */
+
+  .cudiumLogoText {
+    font-size: 2.3rem;
+  }
+
+  .navBarIcon {
+    width: 4.5vw;
+    height: 4.5vh;
+  }
+
+  .playstoreButton,
+  .appstoreButton {
+    gap: 1vw;
+    padding: 2vh 3vw;
+  }
+
+  .appstoreIcon,
+  .playstoreIcon {
+    width: 3vw;
+    height: 3vh;
+  }
+
+  .headerBtnSubText {
+    font-size: 0.8rem;
+  }
+
+  .headerBtnBoldText {
+    font-size: 1.3rem;
+  }
+
+  .headerBottom {
+    margin: 7vh;
+  }
+
+  .foreignAcctHeaderImg {
+    width: 110vw;
+    height: 50vh;
+  }
+
+  /* ************************** header tablet design end********************************* */
+
+  /* ****************** section one tablet design start ******************************************/
+
+  .sectionOneDesc,
+  .container3Desc,
+  .circleDesc {
+    margin: 4vh 10vw;
+    gap: 1rem;
+  }
+
+  .circleDesc {
+    margin-top: 18vh;
+  }
+
+  .sendCashText {
+    font-size: 1.7rem;
+  }
+
+  .container3DescBoldText {
+    margin-top: 0;
+  }
+
+  .sectionOneDescLightText,
+  .container3DescLightText,
+  .circleDescLightText {
+    font-size: 1.3rem;
+  }
+
+  .container3 {
+    margin: 18vh 0 0 0;
+  }
+
+  .container3Img {
+    width: 90vw;
+    height: 45vh;
+  }
+
+  .container3BoldText {
+    font-size: 1.2rem;
+  }
+
+  .container3LightText {
+    font-size: 1.5rem;
+  }
+
+  /* ****************** section one tablet design end ******************************************/
+
+  /* *************************** section two tablet design start******************** */
+
+  .sectionTwoTopBoldText {
+    font-size: 2rem;
+  }
+
+  .sectionTwoTopLightText {
+    font-size: 1.5rem;
+    line-height: 1.5rem;
+  }
+
+  .sectionTwoBottomBoldText {
+    font-size: 1.7rem;
+  }
+
+  .sectionTwoBottomLightText {
+    font-size: 1.4rem;
+    line-height: 2.6vh;
+  }
+
+  /* **************************** section two tablet design end ********************** */
+
+  /* **************************** section three tablet design start ********************** */
+
+  .sectionThreeBoldText {
+    font-size: 2rem;
+  }
+
+  .sectionThreeLightText {
+    font-size: 1.4rem;
+    font-weight: 400;
+  }
+  /* **************************** section three tablet design end ********************** */
+
+  /* **************************** footer tablet design start ********************** */
+  .h3 {
+    font-size: 2rem;
+  }
+
+  .servicesList,
+  .contactList {
+    font-size: 1.5rem;
+  }
+
+  .footerBottomText {
+    font-size: 1.5rem;
+  }
+
+  .copyrightContainer {
+    gap: 3vw;
+  }
+
+  .TermsOfUseText,
+  .privacyText,
+  .copyrightText {
+    font-size: 1.4rem;
+  }
+}
+/* **************************** footer tablet design end********************** */
+/* *************************************** TABLET 2 Design******************************************** */
+
+/* ********************************* desktop design ****************** */
+@media only screen and (min-width: 992px) {
+  .mobileMenuNone {
+    display: none;
+  }
+
+  .navBarIcon {
+    display: none;
+  }
+
+  .desktopServiceMenu,
+  .navButton {
+    display: flex;
+  }
+
+  .nav {
+    margin-right: 0;
+  }
+
+  .desktopNav {
+    justify-content: space-between;
+  }
+
+  /* ***************************** header ******************** */
+  /* ************nav************** */
+  .cudiumLogo {
+    width: 2vw;
+    height: 5vh;
+  }
+
+  .cudiumLogoText {
+    font-weight: 700;
+    font-size: 1.2rem;
+  }
+
+  .desktopServiceMenuServiceText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .servicesIcon {
+    color: #f6f8fc;
+    margin: 0.2vh 0 0 0.2vw;
+    height: 2vh;
+  }
+
+  .desktopServiceMenuBlogText,
+  .desktopServiceMenuHelpText {
+    font-weight: 600;
+    font-size: 1.3rem;
+  }
+
+  .navButtonText {
+    font-size: 1rem;
+    font-weight: 600;
+    padding: 2.3vh 2vh;
+  }
+
+  /* ************nav************* */
+
+  .header {
+    height: auto;
+    overflow: hidden;
+    padding: 5vh 7vw 5vh 6vw;
+  }
+
+  .mobileIcons {
+    display: none;
+  }
+
+  .desktopHeaderBottom {
+    display: flex;
+    width: 100%;
+    margin-top: 5vh;
+  }
+
+  .desktopHeaderBottomLeft {
+    margin: 13vh 0 0 0;
+    width: 50%;
+  }
+
+  .headerBottom {
+    margin: 10vh 0 10vh;
+    width: 50%;
+  }
+
+  .foreignAcctHeaderImg {
+    width: 110vw;
+    height: 50vh;
+  }
+
+  .headerBoldText {
+    font-weight: 700;
+    font-size: 2rem;
+    padding: 0 5vw 0 0;
+  }
+
+  .headerSubText {
+    font-weight: 400;
+    font-size: 1.3rem;
+    margin-top: 2vh;
+    padding-right: 12vw;
+  }
+
+  .headerButtons {
+    margin-top: 10vh;
+    gap: 2vw;
+  }
+
+  .playstoreButton,
+  .appstoreButton {
+    gap: 0.5vw;
+    padding: 2.5vh 1.5vw;
+    padding-left: 0;
+  }
+
+  .headerBtnSubText {
+    font-size: 0.6rem;
+  }
+
+  .headerBtnBoldText {
+    font-size: 1.1rem;
+  }
+
+  /* ********************************** Section One start*************************** */
+  .foreignSectionIcon3 {
+    bottom: 5vh;
+    right: -3vw;
+  }
+
+  .foreignSectionIcon4 {
+    bottom: -3vh;
+    left: -4vw;
+  }
+
+  .sectionOne {
+    width: 100vw;
+    padding-bottom: 50vh;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20vh 12vw 15vh;
+  }
+
+  .sectionOneBox {
+    position: relative;
+    padding: 4vh 2vw;
+    width: 25vw;
+    z-index: 10;
+  }
+
+  .sectionOneBoxCard {
+    display: flex;
+  }
+
+  .balanceBox {
+    padding: 0.5vw;
+  }
+
+  .balanceText {
+    font-size: 0.9rem;
+  }
+
+  .balanceFig {
+    font-size: 1.2rem;
+  }
+
+  .amountContainerFig {
+    font-size: 0.9rem;
+    padding: 0;
+  }
+
+  .enterEmailText {
+    font-size: 0.8rem;
+    padding: 0;
+  }
+
+  .nextButton {
+    margin: 1rem auto 0;
+    padding: 0.8rem 6rem;
+  }
+
+  .sendCashNextButton {
+    margin: 1rem auto 0;
+    padding: 0.6rem 4rem;
+  }
+
+  .usdText {
+    font-size: 0.7rem;
+  }
+
+  .usaFlag {
+    width: 2vw;
+    height: 2vh;
+  }
+
+  .ngnIcon {
+    height: 0.6rem;
+  }
+  .boxes {
+    gap: 1vw;
+  }
+
+  .amountText,
+  .recipientEmailText {
+    font-size: 0.7rem;
+    margin-top: 1rem;
+  }
+
+  .sendCashAmountText,
+  .sendCashRecipientEmailText {
+    margin: 0.5rem 0 0 0;
+  }
+
+  .sendCashNgnBox {
+    padding: 0.2rem;
+    gap: 0.2rem;
+  }
+
+  .sectionOneDesc {
+    width: 40vw;
+    margin: 0;
+    padding: 0 0 0 10vw;
+  }
+
+  .circleDesc {
+    width: 40vw;
+    margin: 35vh 0 0 0vw;
+    padding: 0 6vw 0 0;
+  }
+
+  .container3Desc {
+    width: 40vw;
+    margin: 25vh 0 0 0;
+    padding: 0 0 0 10vw;
+  }
+
+  .sendCashBox {
+    margin: 17vh 8vw 0 0;
+    padding: 2vh 2vw;
+    width: auto;
+    z-index: 100;
+  }
+
+  .LineImg,
+  .feePercentage {
+    display: block;
+  }
+
+  .sendCashBoxCard {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 22vh;
+    left: 10vw;
+    background-color: #f6f8fc;
+    padding: 1rem 1rem 1rem;
+    border-radius: 0.5rem;
+    z-index: 0;
+  }
+
+  .sendCashCardAmountContainer {
+    background-color: #e2e8f0;
+    padding: 0.6rem 2.5rem;
+    border-radius: 0.5rem;
+    margin: 0.7rem 0 0 0;
+  }
+
+  .sendCashCardNgnBox {
+    padding: 0.6rem 0.3rem 0.6rem 0.2rem;
+    gap: 0.3rem;
+    background-color: #e2e8f0;
+    border-radius: 0.5rem;
+    margin: 0.7rem 0 0 0;
+  }
+
+  .sendCashCardAmountContainer {
+    flex-grow: 3 !important;
+  }
+
+  .sendCashBoxCardP1 {
+    margin: 1.2rem 0 0 0;
+    text-align: center;
+    color: #94a3b8;
+    font-size: 1rem;
+  }
+
+  .sendCashBoxCardP2 {
+    color: #f5abab;
+    font-size: 0.8rem;
+    text-align: center;
+    background-color: #27ae601a;
+    margin: 1rem 0 0 0;
+    padding: 0.7rem 0rem 0.8rem;
+    border-radius: 1rem;
+  }
+
+  .sendCashBoxCardfig {
+    margin: 0.5rem 0 0 0;
+    text-align: center;
+    color: #475569;
+    font-size: 1.3rem;
+    font-weight: 700;
+  }
+
+  .sectionOneDescBoldText {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .sectionOneDescLightText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .circleDescBoldText {
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .circleDescLightText {
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  .container3 {
+    margin: 30vh 0 0 0;
+    /* width: 30vw; */
+  }
+
+  .container3Img {
+    width: 35vw;
+    height: 55vh;
+    padding: 0;
+    margin: 0;
+    margin-left: -3vw;
+  }
+
+  .container3DescBoldText {
+    margin: 0;
+    padding: 0;
+    font-size: 1.5rem;
+    text-align: left;
+  }
+
+  .container3DescLightText {
+    margin: 0;
+    font-size: 1rem;
+    text-align: left;
+  }
+
+  /* ********************************** Section One end *************************** */
+
+  /* ********************************** Section Two *************************** */
+  .sectionTwo {
+    margin-top: 0vh;
+  }
+
+  .sectionTwoBottom {
+    position: relative;
+    margin: 5vh 0 3vh;
+    flex-direction: row;
+    gap: 12vw;
+    justify-content: space-between;
+  }
+
+  .desktopSectionTwoBottomFlexColumn {
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+  }
+
+  .sectionTwoBottomBoldText {
+    font-size: 1.3rem;
+  }
+
+  .sectionTwoBottomLightText {
+    font-weight: 400;
+    font-size: 0.9rem;
+    line-height: 1.2rem;
+    padding: 0 1vw;
+  }
+
+  .uLine,
+  .nLine {
+    display: block;
+    width: 50vw;
+    height: 10vh;
+    position: absolute;
+  }
+
+  .uLine {
+    right: -0.1vw;
+    top: 3vh;
+  }
+
+  .nLine {
+    top: -4vh;
+    left: 1vw;
+  }
+
+  /* ********************************** Section Two *************************** */
+
+  /* ********************************** Section Three *************************** */
+  .sectionThree {
+    margin: 13vh 6.5vw;
+  }
+
+  .topFrame {
+    top: -20vh;
+    left: -1vw;
+    height: 30vh;
+    width: 10vw;
+  }
+
+  .bottomFrame {
+    bottom: -4vh;
+    right: -2vw;
+    height: 18vh;
+    width: 10vw;
+  }
+
+  .sectionThreeBoldText {
+    font-size: 2rem;
+  }
+
+  .sectionThreeLightText {
+    font-size: 1.3rem;
+  }
+  /* ********************************** Section Three *************************** */
+
+  /* ********************************** desktop Footer *************************** */
+  .footer {
+    display: none;
+  }
+
+  .desktopFooter {
+    display: flex;
+    margin: 15vh 6.5vw 8vh;
+  }
+
+  .desktopFooterTop {
+    display: flex;
+    justify-content: space-around;
+    border-bottom: 1px solid #cbd4e1;
+    padding-bottom: 8vh;
+    width: 100%;
+  }
+
+  .desktopFooterColumnFiftyVw {
+    width: 50%;
+  }
+
+  .desktopFooterLogoContainer {
+    gap: 1rem;
+  }
+
+  .footerCudiumLogo {
+    width: 3rem;
+    height: 3rem;
+  }
+
+  .footerLogoContainerText {
+    font-size: 2rem;
+  }
+
+  .footerBottomText {
+    padding-right: 12rem;
+    margin-top: 1.2rem;
+    font-size: 1rem;
+    line-height: 1.3rem;
+  }
+
+  .footerIcons {
+    margin-top: 1rem;
+  }
+
+  .faceBookIcon,
+  .twitterIcon,
+  .instagramIcon {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+
+  .desktopFooterColumntwentyFiveVw {
+    width: 25%;
+    margin-left: 10vw;
+  }
+
+  .h3 {
+    font-weight: 600;
+    font-size: 1.2rem;
+  }
+
+  .servicesList,
+  .contactList {
+    margin: 2rem 0 0 0;
+    font-size: 1rem;
+  }
+
+  .faqsText {
+    margin-top: 1rem;
+  }
+
+  .copyrightContainer {
+    margin: 1rem;
+    gap: 1rem;
+  }
+
+  .copyrightText,
+  .TermsOfUseText,
+  .privacyText {
+    font-size: 0.8rem;
+  }
+
+  /* ********************************** desktop Footer *************************** */
+}
